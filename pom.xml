@@ -1,0 +1,234 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <artifactId>projet-ae-boilerplate</artifactId>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.0.0-M5</version>
+      </plugin>
+      <plugin>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+            <id>jacoco-initialize</id>
+          </execution>
+        </executions>
+        <groupId>org.jacoco</groupId>
+        <version>0.8.7</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <configLocation>google_checks.xml</configLocation>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+          <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
+          <suppressionsLocation>src/main/resources/checkstyle-suppressions.xml
+          </suppressionsLocation>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.1.2</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <artifactId>jersey-container-grizzly2-http</artifactId>
+      <groupId>org.glassfish.jersey.containers</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-hk2</artifactId>
+      <groupId>org.glassfish.jersey.inject</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <groupId>org.glassfish.jersey.media</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>postgresql</artifactId>
+      <groupId>org.postgresql</groupId>
+      <version>42.3.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>jbcrypt</artifactId>
+      <groupId>org.mindrot</groupId>
+      <version>0.4</version>
+    </dependency>
+    <dependency>
+      <artifactId>java-jwt</artifactId>
+      <groupId>com.auth0</groupId>
+      <version>3.18.3</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+      <version>5.8.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>junit-platform-launcher</artifactId>
+      <groupId>org.junit.platform</groupId>
+      <version>1.8.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-container-grizzly2-http</artifactId>
+      <groupId>org.glassfish.jersey.containers</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-hk2</artifactId>
+      <groupId>org.glassfish.jersey.inject</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>commons-lang3</artifactId>
+      <groupId>org.apache.commons</groupId>
+      <version>3.12.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>java-jwt</artifactId>
+      <groupId>com.auth0</groupId>
+      <version>3.18.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <version>2.3.3</version>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-media-multipart</artifactId>
+      <groupId>org.glassfish.jersey.media</groupId>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-moxy</artifactId>
+    </dependency>
+    <dependency>
+      <artifactId>json</artifactId>
+      <groupId>org.json</groupId>
+      <version>20211205</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
+    <dependency>
+      <artifactId>commons-text</artifactId>
+      <groupId>org.apache.commons</groupId>
+      <version>1.9</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-dbcp2</artifactId>
+      <version>2.9.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+
+
+    <!-- uncomment this to get JSON support:
+     <dependency>
+        <groupId>org.glassfish.jersey.media</groupId>
+        <artifactId>jersey-media-json-binding</artifactId>
+    </dependency>
+    -->
+    <dependency>
+      <artifactId>junit</artifactId>
+      <groupId>junit</groupId>
+      <scope>test</scope>
+      <version>4.12</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>jackson-core</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <scope>compile</scope>
+      <version>2.12.2</version>
+    </dependency>
+    <dependency>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <version>3.0.3</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.containers.glassfish/jersey-gf-cdi -->
+    <dependency>
+      <groupId>org.glassfish.jersey.containers.glassfish</groupId>
+      <artifactId>jersey-gf-cdi</artifactId>
+      <version>2.14</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.mindrot</groupId>
+      <artifactId>jbcrypt</artifactId>
+      <version>0.4</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>struts-core</artifactId>
+      <groupId>org.apache.struts</groupId>
+      <version>1.3.8</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
+
+  </dependencies>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>jersey-bom</artifactId>
+        <groupId>org.glassfish.jersey</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${jersey.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <groupId>be.vinci.pae</groupId>
+  <modelVersion>4.0.0</modelVersion>
+
+  <name>projet-ae-boilerplate</name>
+
+  <packaging>jar</packaging>
+
+  <properties>
+    <jersey.version>3.0.3</jersey.version>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.15.0</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.3.1</version>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <version>0.0.1-SNAPSHOT</version>
+
+</project>
